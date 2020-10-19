@@ -1,0 +1,26 @@
+#i have to sort this array according to the middle letter in each word
+#expected output is:
+# 'Cha Cha'
+#'Paso Doble'
+#'Viennese Waltz'
+#'Waltz'
+#'Samba'
+#'Rumba'
+#'Tango'
+#'Foxtrot'
+#'Jive'
+
+words_arr = ['Waltz', 'Tango', 'Viennese Waltz', 'Foxtrot', 'Cha Cha', 'Samba', 'Rumba', 'Paso Doble', 'Jive']
+
+def middle(word):
+  middle_char = word[len(word)//2]#this is how i find middle character to use in sort method
+  #print("middle: ", middle)
+  return middle_char
+
+words_arr.sort(key=middle)#sort can take some parameters to search against
+
+for word in words_arr:
+  middle(word)
+  #print(word)
+
+print(words_arr)#prints expected output
