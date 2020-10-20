@@ -1,1 +1,50 @@
 #exercises
+
+letters_dict = {
+  'a': '2',
+  'b': '3',
+  'c': '5',
+  'd': '7',
+  'e': '11',
+  'f': '13',
+  'g': '17',
+  'h': '23',
+  'i': '29',
+  'j': '31',
+  'k': '37',
+  'l':'41',
+  'm': '43',
+  'n': '47',
+  'o':'53',
+  'p':'59',
+  'q':'61',
+  'r':'67',
+  's':'71',
+  't':'73',
+  'u':'79',
+  'v':'83',
+  'x':'89',
+  'y':'97',
+  'z':'101'
+}
+
+def hash_func1():
+  return 1
+
+def hash_func2(str):
+  return len(str)
+
+def hash_func3(str):
+  return str[0]
+
+def hash_func4(str):
+  sum = 0
+  for letter in str:
+    #print(letters_dict[f"{letter}"])
+    sum += int(letters_dict[f"{letter}"])
+  #print(sum % 10)
+  return(sum % 10)
+
+print(hash_func4("bag"))
+
+#NOTE: still need to finish excersices; these are just 4 functions. see pg. 93
