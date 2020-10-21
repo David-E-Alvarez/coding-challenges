@@ -1,0 +1,13 @@
+#bfs finds shortest distance between two things
+#although graphs can be used to represent all kinds
+#of things one thing they can be used to represent #are different routes between two locations(think Google maps)
+
+#the "breadth-first search" algorithm can solve the 
+#shortest-path problem. The shortest-path problem #can find the shortest route between two points. In
+#a graph made u of nodes there is paths between 
+#them called edges and the bfs would find 
+#the path between two nodes with the least edges
+
+#"graphs model sets of connections" (pg. 98)
+#"graphs are made up of nodes and edges" (pg. 99)
+#"graphs model how different things are connected to one another"(pg. 99)
