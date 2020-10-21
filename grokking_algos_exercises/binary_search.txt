@@ -1,0 +1,31 @@
+#When looking for someone in a phonebook you wouldn't start from the beginning if their name started with Z.
+
+#"Binary search" is an algorithm whose input is a sorted list of elements. (Algorithms are simply sets or steps of
+#instructions). A function takes in input but a function can have an algorithm as its body or the calculation 
+#it performs with the input it receives. Binary searches return position of where item/element being looked/searched 
+#for is located at. It(b.s.) will return "null" if list doesn't inlcude or have thing you are looking for. 
+
+#How B.S. works:
+#In a list of 100 you elimate half of the numbers by seeing if the number you're looking for is under or over 50.
+#if the # is 25 and you elimated all numbers over 50 you now only look at numbers between 1 and 50. You eliminate half of the numbers everytime you search. 
+
+#Worst case of simple and b.s.
+#a simple search is where you would search through a list one by one from the beginning. 
+#"worst case" is how many steps it would take to find the item/thing you're looking for
+#worst case of simple search or how many steps to find thing/item is equal to the amount of things in list. 
+#worst case for b.s. is the amount of times you can divide the amount of things you're looking through until you can't divide by two anymore 
+
+#logarithms! what is an exponential? 2 to the power of 2 is an exponential. "logs" are the opposite of exponentials. 
+#"logs are the flips of exponentials" pg. 7 in book
+#ex. log base 10 100 is like asking "how many 10's have to be multiplied to get 100?"(pg. 7) log base 10 100 = 2
+#10^2=100 <-> log base 10 100 = 2
+#10^3=1000<->log base 10 100 = 2
+#2^3 = 8 <-> log base 2 8 = 3
+#2^4 = 16 <-> log base 2 16 = 4
+#2^5 = 32 <-> log base 2 32 = 5
+
+#note: in this book log when talking about "big o" is log base 2
+#b.s.'s "worst case" is log n
+#ex. what is log(base 2) 8?
+#how many 2's have to be multiplied to get 8? 3!
+# log 8 == 3  becasue 2^3 = 8

@@ -1,3 +1,4 @@
+#NOTE: still need to finish excersices; these are just 4 functions. see pg. 93
 #exercises
 
 letters_dict = {
@@ -47,4 +48,3 @@ def hash_func4(str):
 
 print(hash_func4("bag"))
 
-#NOTE: still need to finish excersices; these are just 4 functions. see pg. 93
