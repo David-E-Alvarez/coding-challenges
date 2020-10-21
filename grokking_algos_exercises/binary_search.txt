@@ -29,3 +29,5 @@
 #ex. what is log(base 2) 8?
 #how many 2's have to be multiplied to get 8? 3!
 # log 8 == 3  becasue 2^3 = 8
+
+
