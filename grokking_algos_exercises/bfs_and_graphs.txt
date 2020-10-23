@@ -11,3 +11,21 @@
 #"graphs model sets of connections" (pg. 98)
 #"graphs are made up of nodes and edges" (pg. 99)
 #"graphs model how different things are connected to one another"(pg. 99)
+
+#BFS is a search algorithm that runs on graphs
+#it helps answer two types of questions
+	#is there a path from node A to node B?
+	#what is shortest path from node A to node B?
+#ex.
+#I'm a mango seller. I have friends on Facebook that I want to know if whether they are mango sellers. If I don't directly 
+have friends that sell mangos I want to find out if THEIR friends sell mangos. If I have a list of my friends I want to search through, I add their friends if they themselves don't sell mangos. If my friends dont sell mangoes and neither do their friends I find out if their friends(friends of friends) do and on and on.  My friends are considered first degree connections and their friends are considered second degree connections. What would their friends be considered to me? THIRD degree connections. 
+#First degree connections are added to list before second-degree connections. (When do friends get on list?)
+#people are searched in the order they are added.
+#QUEUES
+#queues are like lines you wait on at places like stores and also exhibit the behavior of them; the first people in line are the first people to get served. Queues only have two operations which are "enqueue" and "dequeue". "enqueue" adds to back of line and "dequeue" takes front of line off. queues are called "FIFO" data structures.
+
+#I. Implementing graph
+	# A. Graphs consist of several nodes
+		#1. nodes is connected to neighboring nodes
+		#note: hash tables can express a relationship between nodes
+		#ex.  
