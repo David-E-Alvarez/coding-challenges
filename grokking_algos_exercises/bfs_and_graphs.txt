@@ -1,4 +1,4 @@
-#bfs finds shortest distance between two things
+d#bfs finds shortest distance between two things
 #although graphs can be used to represent all kinds
 #of things one thing they can be used to represent #are different routes between two locations(think Google maps)
 
@@ -27,5 +27,43 @@ have friends that sell mangos I want to find out if THEIR friends sell mangos. I
 #I. Implementing graph
 	# A. Graphs consist of several nodes
 		#1. nodes is connected to neighboring nodes
-		#note: hash tables can express a relationship between nodes
-		#ex.  
+		#note: hash tables can express a relationship between nodes. hash tables allow the mapping of keys to a value.
+		#example in code:
+			graph = {}
+			graph["you"] = ["alice","bob","claire"]
+ 
+	#B. Graphs are just a bunch of nodes and edges
+	#C. a directed graph is a graph where nodes only have a one directional relationship with other nodes. (i don't know
+if all nodes have to have that condition)
+		#1. A<----->B (directed)
+		#2. A------B (undirected)
+BFS example:
+from collections import deque
+search_queue = deque()#creates new queue
+
+
+graph = dict()#same as graph = {}
+graph["david(me)"] = ["steve", "davim", "Jesus"]#my friends
+graph["steve"] = ["bob", "alicim"]
+#print("graph: ", graph)
+
+search_queue += graph["david(me)"]#adds neighbors to search queue
+
+#print("search_queue: ", search_queue)
+#deque(['steve', 'david', 'Jesus'])
+
+def person_is_seller(name): #checks to see if persons name ends with the letter m and if it does they sell mango
+#this is a way to see if someone sells mangos
+  return name[-1] == 'm'
+
+
+while search_queue: #while queue is not empty
+    person = search_queue.popleft()#grabs 1st person off queue
+    print("person: ", person, "| search_queue: ", search_queue)
+    if person_is_seller(person) == True: #does person sell mangos?
+        print(person, " is a mango seller!")
+    else:
+        if person in graph:#does person have friends to add to search_queue?
+            search_queue += graph[person]#add person's friend to queue
+        else:
+            print(person, " not in search_queue")
