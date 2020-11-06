@@ -68,3 +68,7 @@ def search(name):
                 print(person, " not in search_queue")
             
 search("david(me)")
+
+#runtime:
+#O(# of edges)
+#runtime for BFS is O(# of people + # of edges) --> O(V+E)
