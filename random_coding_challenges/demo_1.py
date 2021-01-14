@@ -1,3 +1,5 @@
+#NOTE: try to code without using "lower" and "isupper" methods. Use ASCII instead i.e. "ord"
+
 # letter = "W"
 # print(letter.lower())
 
