@@ -1,0 +1,22 @@
+var myStr1 = "Coding in Python is fun because coding Python allows for coding in Python easily while coding".toLowerCase();
+var myStr1Arr = myStr1.split(" ");
+
+var myStr2 = "I like coding. I like testing. I love debugging!".toLowerCase();
+var cleanMyStr2 = myStr2.replace(/[.,!]/g, "");
+var myCleanStr2 = cleanMyStr2.split(" ");
+
+var myStr3 = "Debug, test, deploy. Debug, debug, test, deploy. Debug, test, test, deploy!".toLowerCase();
+var cleanMyStr3 = myStr3.replace(/[.,!]/g, "");
+var myCleanStr3 = cleanMyStr3.split(" ");
+
+//console.log(myStr1Arr, "\n\n", myCleanStr2, "\n\n", myCleanStr3, "\n\n");
+
+const myMap = new Map();
+
+for(var i = 0; i < myStr1Arr; i++){
+    if(myMap.has(myStr1Arr[i])){
+        myMap.set(myStr1Arr[i], counter++)
+    }else{
+
+    }
+}
