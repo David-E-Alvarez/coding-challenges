@@ -1,17 +1,42 @@
-var myStr = "johnpaul@gmail.com";
-//console.log(myStr.indexOf("@"));
+// Build an Email Masker
+// In this lab, you will mask the username part of an email address with asterisks. Masking is a term used to hide or replace sensitive information with asterisks or other characters.
 
-var indexOfAtSign = myStr.indexOf("@");
-//console.log("indexOfAtSign: ", indexOfAtSign);
+// For example, if the email address was myEmail@email.com, then the masked email address will be m*****l@email.com.
 
-var subStrOfMyStr = myStr.substring(0,indexOfAtSign);
-//console.log("subStrofMyStr: ",subStrOfMyStr);
+// Objective: Fulfill the user stories below and get all the tests to pass to complete the lab.
 
-var lettersToMakeAsterisks = subStrOfMyStr.substring(1,indexOfAtSign-1);
-//console.log(lettersToMakeAsterisks);
+// User Stories:
 
-var asteriskLetters = lettersToMakeAsterisks.replace(/[a-zA-Z]/g, "*");
-//console.log("asteriskLetters: ", asteriskLetters);
+// Create a function named maskEmail that takes email as an argument.
+// Inside the function, you should mask the email and append the domain name to it. Remember that you can use methods like slice, repeat, indexOf or even replace to help you.
+// Outside the function, declare a variable named email to store the email address you want to mask.
+// Call the maskEmail function with the email variable and output the result to the console.
+// maskEmail("apple.pie@example.com") should return "a*******e@example.com".
+// maskEmail("freecodecamp@example.com") should return "f**********p@example.com".
+// maskEmail("info@test.dev") should return "i**o@test.dev".
+// maskEmail("user@domain.org") should return "u**r@domain.org".
 
-var maskedEmail = myStr[0] + asteriskLetters + subStrOfMyStr.slice(-1) + myStr.substring(indexOfAtSign);
-console.log("maskedEmail: ", maskedEmail);
+var emailToMask = "freecodecamp@example.com";
+console.log("--->", maskEmail(emailToMask));
+
+function maskEmail(email){
+    //var myStr = "apple.pie@example.com";
+    //console.log(myStr.indexOf("@"));
+
+    var indexOfAtSign = email.indexOf("@");
+    //console.log("indexOfAtSign: ", indexOfAtSign);
+
+    var subStrOfMyStr = email.substring(0,indexOfAtSign);
+    //console.log("subStrofMyStr: ",subStrOfMyStr);
+
+    var lettersToMakeAsterisks = subStrOfMyStr.substring(1,indexOfAtSign-1);
+    //console.log(lettersToMakeAsterisks);
+
+    var asteriskLetters = lettersToMakeAsterisks.replace(/[a-zA-Z.]/g, "*");
+    //console.log("asteriskLetters: ", asteriskLetters);
+
+    var maskedEmail = email[0] + asteriskLetters + subStrOfMyStr.slice(-1) + email.substring(indexOfAtSign);
+    //console.log("maskedEmail: ", maskedEmail);
+    return maskedEmail;
+}
+
