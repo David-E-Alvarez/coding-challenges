@@ -16,10 +16,11 @@
 // maskEmail("info@test.dev") should return "i**o@test.dev".
 // maskEmail("user@domain.org") should return "u**r@domain.org".
 
-var emailToMask = "freecodecamp@example.com";
-console.log("--->", maskEmail(emailToMask));
+var email = "info@test.dev";
+console.log(maskEmail(email));
 
 function maskEmail(email){
+    //console.log("email: ", email.substring(email.indexOf("@") - 1));
     //var myStr = "apple.pie@example.com";
     //console.log(myStr.indexOf("@"));
 
@@ -29,14 +30,17 @@ function maskEmail(email){
     var subStrOfMyStr = email.substring(0,indexOfAtSign);
     //console.log("subStrofMyStr: ",subStrOfMyStr);
 
-    var lettersToMakeAsterisks = subStrOfMyStr.substring(1,indexOfAtSign-1);
+    let asteriskCount = subStrOfMyStr.length - 2;
+    //console.log("---->", "*".repeat(asteriskCount));
+
+    //var lettersToMakeAsterisks = subStrOfMyStr.substring(1,indexOfAtSign-1);
     //console.log(lettersToMakeAsterisks);
 
-    var asteriskLetters = lettersToMakeAsterisks.replace(/[a-zA-Z.]/g, "*");
+    //var asteriskLetters = lettersToMakeAsterisks.replace(/[a-zA-Z.]/g, "*");
     //console.log("asteriskLetters: ", asteriskLetters);
 
-    var maskedEmail = email[0] + asteriskLetters + subStrOfMyStr.slice(-1) + email.substring(indexOfAtSign);
+    var maskedEmail = email[0] + "*".repeat(asteriskCount) + email.substring(indexOfAtSign - 1);
+    //var maskedEmail = email[0] + asteriskLetters + subStrOfMyStr.slice(-1) + email.substring(indexOfAtSign);
     //console.log("maskedEmail: ", maskedEmail);
     return maskedEmail;
 }
-
