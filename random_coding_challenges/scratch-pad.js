@@ -1,7 +1,17 @@
-function exampleFunction() {
-    //console.log("hello?");
-    return "Hello";
-    return "World!";
+let anObj = {
+  containerId: 1,
+  destination: "Monterey, California, USA",
+  weight: 831,
+  unit: "lb",
+  hazmat: false
 }
 
-console.log(exampleFunction());
+let anObjCopy = Object(anObj);
+console.log("anObjCopy: ", anObjCopy);
+
+function normalizeUnits(manifest){
+   console.log("manifest.unit: ", manifest.unit);
+  
+}
+
+normalizeUnits(anObj);
