@@ -186,7 +186,7 @@ function validateManifest(manifest){
     }    
 
     if(Object.hasOwn(manifestCopy, "weight")){
-        if(manifestCopy.weight < 0 || Number.isNaN(manifestCopy.weight)){
+        if(manifestCopy.weight <= 0 || Number.isNaN(manifestCopy.weight)){
             objectToReturnIfMissingKeysOrInvalidValues.weight = "Invalid";
         }
     }else{
@@ -194,7 +194,7 @@ function validateManifest(manifest){
     }
 
     if(Object.hasOwn(manifestCopy, "unit")){
-         if(manifestCopy.unit != "kg"){
+         if(manifestCopy.unit !== "kg" && manifestCopy.unit !== "lb"){
             objectToReturnIfMissingKeysOrInvalidValues.unit = "Invalid";
         }
         
@@ -215,6 +215,6 @@ function validateManifest(manifest){
 }
 
 //console.log(normalizeUnits(validObj));
-console.log(validateManifest({containerId: 1, destination: "Santa Cruz", weight: 1.5, unit: "kg", hazmat: false}));
+console.log(validateManifest({ containerId: 1, destination: "Santa Cruz", weight: 1.5, unit: "kg", hazmat: false }));
 
 
