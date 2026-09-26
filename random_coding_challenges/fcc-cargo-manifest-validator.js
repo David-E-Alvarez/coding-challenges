@@ -25,23 +25,24 @@
 
 // You should implement a function named normalizeUnits with a manifest parameter.
 
-// The function must not mutate the original manifest object and must always return a new
-//  object where weight is normalized to kilograms and unit is set to "kg".
-// If the weight of the manifest object is expressed in pounds (unit: "lb"), the function
-//  should convert the weight to kilograms using the approximate conversion 1 lb = 0.45 kg, and update the unit accordingly.
+// [x]The function must not mutate the original manifest object and must always return a new
+//      object where weight is normalized to kilograms and unit is set to "kg".
+// [x]If the weight of the manifest object is expressed in pounds (unit: "lb"), the function
+//      should convert the weight to kilograms using the approximate conversion 1 lb = 0.45 kg, and update the unit accordingly.
 // If the weight is already expressed in kilograms (unit: "kg"), the weight and unit should remain unchanged.
-// You should implement a function named validateManifest with a manifest parameter.
 
-// The function must not mutate the original manifest object and must always return a new object.
-// If the input manifest is valid (no missing or invalid properties), the function should return an empty object.
-// If the input manifest is not valid, the function should return an object containing entries for each missing or 
-// invalid property. Missing properties should have the value "Missing" and invalid properties should have the value "Invalid".
-// Example return value where the input object is missing the destination property and has an invalid weight property:
+// [x]You should implement a function named validateManifest with a manifest parameter.
 
-// {
-//   destination: "Missing",
-//   weight: "Invalid"
-// }
+// []The function must not mutate the original manifest object and must always return a new object.
+// []If the input manifest is valid (no missing or invalid properties), the function should return an empty object.
+// []If the input manifest is not valid, the function should return an object containing entries for each missing or 
+//      invalid property. Missing properties should have the value "Missing" and invalid properties should have the value "Invalid".
+//      Example return value where the input object is missing the destination property and has an invalid weight property:
+
+        // {
+        //   destination: "Missing",
+        //   weight: "Invalid"
+        // }
 // You should implement a function named processManifest with a manifest parameter. The function should log:
 
 // If the manifest object is valid, Validation success: ${containerId} and then the manifest's weight in 
@@ -59,17 +60,50 @@
 // Waiting:4. Your normalizeUnits function should return a copy of the input manifest object with its weight normalized to kilograms and its unit set to "kg". Use the approximate conversion 1 lb = 0.45 kg for the weight conversion.
 // Waiting:5. Your normalizeUnits function should return a new copy of the input manifest object without mutating the original.
 // Waiting:6. You should have a function named validateManifest with a manifest parameter.
-// Waiting:7. Your validateManifest function should return a new, empty object {} when called with { containerId: 1, destination: "Santa Cruz", weight: 304, unit: "kg", hazmat: false }.
-// Waiting:8. Your validateManifest function should return an empty object {} if the input manifest object is valid.
-// Waiting:9. Your validateManifest function should return the new object { containerId: "Missing", destination: "Missing", weight: "Missing", unit: "Missing", hazmat: "Missing" } when called with {}, without mutating the original.
-// Waiting:10. Your validateManifest function should return the new object { containerId: "Invalid" } when called with { containerId: null, destination: "Santa Cruz", weight: 304, unit: "kg", hazmat: false }, without mutating the original.
-// Waiting:11. Your validateManifest function should return the new object { containerId: "Invalid", destination: "Invalid", weight: "Invalid", unit: "Invalid", hazmat: "Invalid" } when called with { containerId: 0, destination: 405, weight: -84, unit: "pounds", hazmat: "no" }, without mutating the original.
-// Waiting:12. Your validateManifest function should return the new object { containerId: "Invalid", destination: "Missing", weight: "Missing", unit: "Missing", hazmat: "Missing" } when called with { containerId: -2 }, without mutating the original.
-// Waiting:13. Your validateManifest function should return the new object { containerId: "Invalid", destination: "Missing", weight: "Missing", unit: "Missing", hazmat: "Missing" } when called with { containerId: 3.50 }, without mutating the original. You can use Number.isInteger() to validate integer values.
-// Waiting:14. Your validateManifest function should return the new object { containerId: "Missing", destination: "Invalid", weight: "Missing", unit: "Missing", hazmat: "Missing" } when called with { destination: "  " }, without mutating the original. You can use .trim() to remove whitespace from a string.
-// Waiting:15. Your validateManifest function should return the new object { containerId: "Missing", destination: "Missing", weight: "Invalid", unit: "Missing", hazmat: "Missing" } when called with { weight: NaN }, without mutating the original. You can use Number.isNaN() to validate NaN values.
-// Waiting:16. Your validateManifest function should return an object describing missing and/or invalid properties if the input manifest object is not valid.
-// Waiting:17. Your validateManifest function should return a new object without mutating the original.
+
+// []Waiting:7. Your validateManifest function should return a new, empty object {} when called with
+//  { containerId: 1, destination: "Santa Cruz", weight: 304, unit: "kg", hazmat: false }.
+
+// []Waiting:8. Your validateManifest function should return an empty object {} if the input manifest object is valid.
+
+// []Waiting:9. Your validateManifest function should return the new object 
+// { containerId: "Missing", destination: "Missing", weight: "Missing",
+//  unit: "Missing", hazmat: "Missing" } when called with {}, without mutating the original.
+
+// []Waiting:10. Your validateManifest function should return the new
+// object  { containerId: "Invalid" } when called with { containerId: null,
+//  destination: "Santa Cruz", weight: 304, unit: "kg", hazmat: false }, without mutating the original.
+
+// []Waiting:11. Your validateManifest function should return the 
+// new object { containerId: "Invalid", destination: "Invalid", weight: "Invalid", 
+// unit: "Invalid", hazmat: "Invalid" } when called with 
+// { containerId: 0, destination: 405, weight: -84, unit: "pounds", hazmat: "no" }, without mutating the original.
+
+// []Waiting:12. Your validateManifest function should return the new 
+// object { containerId: "Invalid", destination: "Missing", weight: "Missing", unit: "Missing", hazmat: "Missing" }
+//  when called with { containerId: -2 }, without mutating the original.
+
+// []Waiting:13. Your validateManifest function should return the new 
+// object { containerId: "Invalid", destination: "Missing", weight: "Missing",
+//  unit: "Missing", hazmat: "Missing" } when called with { containerId: 3.50 },
+//  without mutating the original. You can use Number.isInteger() to validate integer values.
+
+// []Waiting:14. Your validateManifest function should return the new
+//  object { containerId: "Missing", destination: "Invalid", weight: "Missing",
+//  unit: "Missing", hazmat: "Missing" } when called with { destination: "  " },
+//  without mutating the original. You can use .trim() to remove whitespace from a string.
+
+// []Waiting:15. Your validateManifest function should return the new 
+// object { containerId: "Missing", destination: "Missing", weight: "Invalid",
+//  unit: "Missing", hazmat: "Missing" } when called with { weight: NaN }, 
+// without mutating the original. You can use Number.isNaN() to validate NaN values.
+
+// []Waiting:16. Your validateManifest function should return an object
+//  describing missing and/or invalid properties if the input manifest object is not valid.
+
+// []Waiting:17. Your validateManifest function should return a new object without mutating the original.
+
+
 // Waiting:18. You should have a function named processManifest with a manifest parameter.
 // Waiting:19. Your processManifest function should first log Validation success: 55 and then log Total weight: 180 kg when called with { containerId: 55, destination: "Carmel", weight: 400, unit: "lb", hazmat: false }.
 // Waiting:20. Your processManifest function should first log the success message, Validation success: ${containerId}, if the input manifest object is valid.
@@ -81,13 +115,42 @@
 // Waiting:26. Your processManifest function should also log the object returned by calling validateManifest() with the original manifest object if the input manifest object is not valid. Call console.log() directly with the returned object.
 // Waiting:27. Your processManifest function should log an error message with the object's containerId, and then log the object returned by calling validateManifest() with the input object, if the input manifest object is not valid. This should involve two console.log() calls.
 
-let anObj = {
-  containerId: 1,
-  destination: "Monterey, California, USA",
-  weight: 101,
-  unit: "lb",
-  hazmat: false
+let validObj = { 
+    containerId: 1, 
+    destination: "Santa Cruz", 
+    weight: 304, 
+    unit: "kg", 
+    hazmat: false 
 }
+
+let emptyObj = {};
+
+let obj3 = { 
+    containerId: null,
+    destination: "Santa Cruz", 
+    weight: 304, 
+    unit: "kg", 
+    hazmat: false 
+}
+
+let obj4 = { containerId: 0, destination: 405, weight: -84, unit: "pounds", hazmat: "no" }
+
+let obj5 = { containerId: -2 }
+
+let obj6 = {containerId: 3.50}
+
+let obj7 = {destination: "    "}
+
+let obj8 = { weight: NaN }
+
+let testObj = {
+    containerId: 5,
+    weight: -5,
+    unit: "kg",
+    hazmat: false
+}
+
+
 
 
 
@@ -100,4 +163,58 @@ function normalizeUnits(manifest){
     return manifestCopy;
 }
 
-console.log(normalizeUnits(anObj));
+function validateManifest(manifest){
+    let manifestCopy = {...manifest};
+    let objectToReturnIfMissingKeysOrInvalidValues = {};
+    //logic to see if object has keys
+    if(Object.hasOwn(manifestCopy, "containerId")){
+        if((manifestCopy.containerId <= 0 || manifestCopy.containerId == null || !Number.isInteger(manifestCopy.containerId))){
+            //invalid containerId
+            objectToReturnIfMissingKeysOrInvalidValues.containerId = "Invalid";
+        }
+    }else{
+        objectToReturnIfMissingKeysOrInvalidValues.containerId = "Missing";
+    }
+
+    if(Object.hasOwn(manifestCopy, "destination")){
+        if(typeof manifestCopy.destination != "string" || manifestCopy.destination.trim().length == 0){
+            objectToReturnIfMissingKeysOrInvalidValues.destination = "Invalid";
+        }
+        
+    }else{
+        objectToReturnIfMissingKeysOrInvalidValues.destination = "Missing";
+    }    
+
+    if(Object.hasOwn(manifestCopy, "weight")){
+        if(manifestCopy.weight < 0 || Number.isNaN(manifestCopy.weight)){
+            objectToReturnIfMissingKeysOrInvalidValues.weight = "Invalid";
+        }
+    }else{
+        objectToReturnIfMissingKeysOrInvalidValues.weight = "Missing";
+    }
+
+    if(Object.hasOwn(manifestCopy, "unit")){
+         if(manifestCopy.unit != "kg"){
+            objectToReturnIfMissingKeysOrInvalidValues.unit = "Invalid";
+        }
+        
+    }else{
+        objectToReturnIfMissingKeysOrInvalidValues.unit = "Missing";
+    }
+
+    if(Object.hasOwn(manifestCopy, "hazmat")){
+        if(typeof manifestCopy.hazmat !== "boolean"){
+            objectToReturnIfMissingKeysOrInvalidValues.hazmat = "Invalid";
+        }
+    }else{
+        objectToReturnIfMissingKeysOrInvalidValues.hazmat = "Missing";
+    }
+    
+    return objectToReturnIfMissingKeysOrInvalidValues;
+    
+}
+
+//console.log(normalizeUnits(validObj));
+console.log(validateManifest({containerId: 1, destination: "Santa Cruz", weight: 1.5, unit: "kg", hazmat: false}));
+
+
