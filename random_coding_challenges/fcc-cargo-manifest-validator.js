@@ -2,7 +2,9 @@
 
 // If the manifest object is valid, Validation success: ${containerId} and then
 //  the manifest's weight in kilograms, in the form Total weight: ${weight} kg.
+
 //  Use normalizeUnits() for this conversion.
+
 // If the manifest object is not valid, Validation error: ${containerId}
 //  and then the object returned by calling validateManifest() with the manifest object.
 // Note: Each of these two cases should have two console.log() calls.
@@ -108,13 +110,25 @@ function validateManifest(manifest){
 }
 
 function processManifest(manifest){
-    let manifestValues = Object.values(validateManifest(manifest));
-    console.log("manifestValues: ", manifestValues);
-    if(manifestValues.length == 0)
-    //if(manifestValues.includes("Missing"))
+    // console.log("manifest: ", manifest);
+    // console.log("validateManifest(manifest): ", validateManifest(manifest));
+    // console.log("Object.values(manifest)", Object.values(manifest));
+    // console.log("manifest.containerId: ", manifest.containerId);
+    let validateManifestArray = Object.values(validateManifest(manifest));
+    //console.log("validateManifestArray: ", validateManifestArray);
+    let manifestArray = Object.values(manifest)
+    //console.log("manifestArray: ",manifestArray);
+    if(validateManifestArray.length === 0){
+        //no missing or invalid object values
+        console.log(`Validation success: ${manifest.containerId}`);
+        console.log(`Total weight: ${normalizeUnits(manifest).weight} kg`);
+    }else{
+        //missing or invalid object values
+        console.log(`Validation error: ${manifest.containerId}`);
+        console.log(validateManifest(manifest));
+    }
 }
 
-//console.log(normalizeUnits(validObj));
-//console.log(validateManifest(obj6));
-
-processManifest(obj6);
+// console.log(normalizeUnits(validObj));
+//validateManifest({ containerId: -88, destination: "Soledad", weight: NaN });
+processManifest({ containerId: 55, destination: "Carmel", weight: 400, unit: "lb", hazmat: false });
