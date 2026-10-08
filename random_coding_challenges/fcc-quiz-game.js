@@ -29,4 +29,65 @@
 //     Waiting: 11. Your getResults function should take the question object as the first parameter and the computer's choice as the second parameter.
 //     Waiting: 12. If the computer choice matches the answer, getResults should return The computer's choice is correct!
 //     Waiting: 13. If the computer choice doesn't match the answer, getResults should return The computer's choice is wrong. The correct answer is: <correct-answer>, where <correct-answer> is the value of the correct answer to the chosen question.
+<<<<<<< HEAD
 //     Waiting: 14. Your getResults function should use exact equality comparison, not substring matching.
+=======
+//     Waiting: 14. Your getResults function should use exact equality comparison, not substring matching.
+
+    
+
+
+//https://www.freecodecamp.org/learn/javascript-v9/lab-quiz-game/lab-quiz-game
+
+
+let questions = [
+  {
+    category: "food",
+    question: "what is your favorite food?",
+    choices: ["pizza","burgers","tacos"],
+    answer: "pizza",
+  },
+  {
+    category: "music",
+    question: "what is your favorite music?",
+    choices: ["rock","rap","country"],
+    answer: "rock",
+  },
+  {
+    category: "color",
+    question: "what is your favorite color?",
+    choices: ["red","blue","yellow"],
+    answer: "red",
+  },
+  {
+    category: "restaurant",
+    question: "what is your favorite fast food restaurant?",
+    choices: ["McDonalds","Burger King","KFC"],
+    answer: "Burger King",
+  },
+  {
+    category: "dessert",
+    question: "what is your favorite dessert?",
+    choices: ["ice cream","cookies","cake"],
+    answer: "ice cream",
+  },
+];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 59c24ec (added code passing tests 1-7)
