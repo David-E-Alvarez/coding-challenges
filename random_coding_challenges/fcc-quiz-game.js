@@ -30,3 +30,5 @@ Tests:
     Waiting: 12. If the computer choice matches the answer, getResults should return The computer's choice is correct!
     Waiting: 13. If the computer choice doesn't match the answer, getResults should return The computer's choice is wrong. The correct answer is: <correct-answer>, where <correct-answer> is the value of the correct answer to the chosen question.
     Waiting: 14. Your getResults function should use exact equality comparison, not substring matching.
+
+    test edit
