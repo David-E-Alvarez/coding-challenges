@@ -16,20 +16,20 @@
 
 // Tests:
 
-//     Waiting: 1. You should create an array named questions.
-//     Waiting: 2. The questions array should contain at least five objects, each having the keys category, question, choices, and answer.
-//     Waiting: 3. The category key should have the value of a string representing a question category.
-//     Waiting: 4. The question key should have the value of a string representing a question.
-//     Waiting: 5. The choices key should have the value of an array containing three strings different from each other.
-//     Waiting: 6. The answer key should have the value of a string.
-//     Waiting: 7. The value of answer should be included in the choices array.
-//     Waiting: 8. You should have a function named getRandomQuestion that takes an array of questions as a parameter and returns a random question object from the array.
-//     Waiting: 9. You should have a function named getRandomComputerChoice that takes the array of the available choices as a parameter, and returns a random answer to the selected question.
-//     Waiting: 10. You should have a function named getResults.
-//     Waiting: 11. Your getResults function should take the question object as the first parameter and the computer's choice as the second parameter.
-//     Waiting: 12. If the computer choice matches the answer, getResults should return The computer's choice is correct!
-//     Waiting: 13. If the computer choice doesn't match the answer, getResults should return The computer's choice is wrong. The correct answer is: <correct-answer>, where <correct-answer> is the value of the correct answer to the chosen question.
-//     Waiting: 14. Your getResults function should use exact equality comparison, not substring matching.
+//     Passed: 1. You should create an array named questions.
+//     Passed: 2. The questions array should contain at least five objects, each having the keys category, question, choices, and answer.
+//     Passed: 3. The category key should have the value of a string representing a question category.
+//     Passed: 4. The question key should have the value of a string representing a question.
+//     Passed: 5. The choices key should have the value of an array containing three strings different from each other.
+//     Passed: 6. The answer key should have the value of a string.
+//     Passed: 7. The value of answer should be included in the choices array.
+//     Passed: 8. You should have a function named getRandomQuestion that takes an array of questions as a parameter and returns a random question object from the array.
+//     Failed: 9. You should have a function named getRandomComputerChoice that takes the array of the available choices as a parameter, and returns a random answer to the selected question.
+//     Failed: 10. You should have a function named getResults.
+//     Failed: 11. Your getResults function should take the question object as the first parameter and the computer's choice as the second parameter.
+//     Failed: 12. If the computer choice matches the answer, getResults should return The computer's choice is correct!
+//     Failed: 13. If the computer choice doesn't match the answer, getResults should return The computer's choice is wrong. The correct answer is: <correct-answer>, where <correct-answer> is the value of the correct answer to the chosen question.
+//     Failed: 14. Your getResults function should use exact equality comparison, not substring matching.
 
     
 
@@ -69,6 +69,14 @@ let questions = [
     answer: "ice cream",
   },
 ];
+
+
+function getRandomQuestion(questionsArr){
+  return questionsArr[Math.floor(Math.random() * questionsArr.length)];
+}
+
+console.log("getRandomQuestion(): ", getRandomQuestion(questions));
+
 
 
 
