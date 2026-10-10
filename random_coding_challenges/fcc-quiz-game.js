@@ -1,6 +1,6 @@
-// Build a Quiz Game
+// // Build a Quiz Game
 
-// Objective: Fulfill the user stories below and get all the tests to pass to complete the lab.
+// // Objective: Fulfill the user stories below and get all the tests to pass to complete the lab.
 
 // User Stories:
 
@@ -25,12 +25,11 @@
 //     Passed: 7. The value of answer should be included in the choices array.
 //     Passed: 8. You should have a function named getRandomQuestion that takes an array of questions as a parameter and returns a random question object from the array.
 //     Passed: 9. You should have a function named getRandomComputerChoice that takes the array of the available choices as a parameter, and returns a random answer to the selected question.
-
-//     Failed: 10. You should have a function named getResults.
-//     Failed: 11. Your getResults function should take the question object as the first parameter and the computer's choice as the second parameter.
-//     Failed: 12. If the computer choice matches the answer, getResults should return The computer's choice is correct!
-//     Failed: 13. If the computer choice doesn't match the answer, getResults should return The computer's choice is wrong. The correct answer is: <correct-answer>, where <correct-answer> is the value of the correct answer to the chosen question.
-//     Failed: 14. Your getResults function should use exact equality comparison, not substring matching.
+//     Passed: 10. You should have a function named getResults.
+//     Passed: 11. Your getResults function should take the question object as the first parameter and the computer's choice as the second parameter.
+//     Passed: 12. If the computer choice matches the answer, getResults should return The computer's choice is correct!
+//     Passed: 13. If the computer choice doesn't match the answer, getResults should return The computer's choice is wrong. The correct answer is: <correct-answer>, where <correct-answer> is the value of the correct answer to the chosen question.
+//     Passed: 14. Your getResults function should use exact equality comparison, not substring matching.
 
     
 
@@ -85,19 +84,27 @@ let choices = getRandomQuestion(questions).choices;
 function getRandomComputerChoice(choicesParam){
   return choicesParam[Math.floor(Math.random() * choicesParam.length)];
 }
-
 //console.log("getRandomComputerChoice(choices): ", getRandomComputerChoice(choices));
 
 let questionObject = getRandomQuestion(questions);
-let computerChoice = getRandomComputerChoice(choices);
 //console.log("questionObject: ", questionObject);
+let computerChoice = questionObject.choices[Math.floor(Math.random() * questionObject.choices.length)];
 //console.log("computerChoice: ", computerChoice);
 
-function getResults(questionObjectParam, choiceParam){
-  console.log("questionObjectParam: ", questionObjectParam, "\n", "choiceParam: ", choiceParam);
+
+function getResults(questionObjectParam, computerChoiceParam){
+  //console.log("questionObjectParam: ", questionObjectParam, "\n", "computerChoiceParam: ", computerChoiceParam);
+  if(computerChoiceParam === questionObjectParam.answer){
+    return "The computer's choice is correct!";
+  }else{
+    return "The computer's choice is wrong. The correct answer is: " + questionObjectParam.answer;
+  }
 }
 
-getResults(questionObject, computerChoice);
+// console.log(getResults(questionObject, computerChoice));
+
+
+
 
 
 
