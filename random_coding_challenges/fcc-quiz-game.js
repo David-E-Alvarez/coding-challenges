@@ -25,6 +25,7 @@
 //     Passed: 7. The value of answer should be included in the choices array.
 //     Passed: 8. You should have a function named getRandomQuestion that takes an array of questions as a parameter and returns a random question object from the array.
 //     Passed: 9. You should have a function named getRandomComputerChoice that takes the array of the available choices as a parameter, and returns a random answer to the selected question.
+
 //     Failed: 10. You should have a function named getResults.
 //     Failed: 11. Your getResults function should take the question object as the first parameter and the computer's choice as the second parameter.
 //     Failed: 12. If the computer choice matches the answer, getResults should return The computer's choice is correct!
@@ -78,15 +79,25 @@ function getRandomQuestion(questionsArr){
 
 
 let choices = getRandomQuestion(questions).choices;
-// console.log("choices: ", choices);
+//console.log("choices: ", choices);
 
 
-function getRandomComputerChoice(choices){
-  return choices[Math.floor(Math.random() * choices.length)];
+function getRandomComputerChoice(choicesParam){
+  return choicesParam[Math.floor(Math.random() * choicesParam.length)];
 }
 
-console.log("getRandomComputerChoice(choices): ", getRandomComputerChoice(choices));
+//console.log("getRandomComputerChoice(choices): ", getRandomComputerChoice(choices));
 
+let questionObject = getRandomQuestion(questions);
+let computerChoice = getRandomComputerChoice(choices);
+//console.log("questionObject: ", questionObject);
+//console.log("computerChoice: ", computerChoice);
+
+function getResults(questionObjectParam, choiceParam){
+  console.log("questionObjectParam: ", questionObjectParam, "\n", "choiceParam: ", choiceParam);
+}
+
+getResults(questionObject, computerChoice);
 
 
 
