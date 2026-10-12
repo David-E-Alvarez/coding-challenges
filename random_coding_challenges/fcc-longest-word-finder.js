@@ -24,11 +24,22 @@
 //     Passed: 9. findLongestWordLength("What if we try a super-long word such as otorhinolaryngology") should return 19.
 
 
+// function findLongestWordLength(str){
+//     let splitStr = str.split(" ");
+//     //console.log("splitStr: ", splitStr);
+//     splitStr.sort((a, b) => b.length - a.length);
+//     return splitStr[0].length;
+// }
+
 function findLongestWordLength(str){
     let splitStr = str.split(" ");
-    //console.log("splitStr: ", splitStr);
-    splitStr.sort((a, b) => b.length - a.length);
-    return splitStr[0].length;
+    let longestWordLength = 0;
+    for(let i = 0; i < splitStr.length; i++){
+        if(splitStr[i].length > longestWordLength){
+            longestWordLength = splitStr[i].length;
+        }
+    }
+    return longestWordLength;
 }
 
 console.log(findLongestWordLength("The quick brown fox jumped over the lazy dog"));
